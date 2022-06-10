@@ -20,4 +20,12 @@ export class CarServiceService {
   public save(car: Car) {
     return this.http.post<Car>(this.carsUrl, car);
   }
+
+  public update(car: Car) {
+    return this.http.put(this.carsUrl, car);
+  }
+
+  public delete(id: string): Observable<any> {
+    return this.http.delete(this.carsUrl + "/" + id);
+  }
 }

@@ -1,15 +1,30 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="card bg-dark my-5">
+      <div class="card bg-dark my-3">
         <h2 class="card-title text-center text-white py-3">{{ title }}</h2>
         <div class="card-body">
           <ul class="text-center list-inline py-3">
             <li class="list-inline-item">
-              <a routerLink="/car" class="btn btn-info">Cars</a>
+              <a routerLink="/car" routerLinkActive="active" class="btn btn-info">Cars</a>
             </li>
             <li class="list-inline-item">
-              <a routerLink="/addcar" class="btn btn-info">Add Car</a>
+              <a routerLink="/addcar" routerLinkActive="active" class="btn btn-info">Add Car</a>
+            </li>
+            <li class="list-inline-item">
+              <span>|||</span>
+            </li>
+            <li class="list-inline-item">
+              <a routerLink="/customer" routerLinkActive="active" class="btn btn-info">Customers</a>
+            </li>
+            <li class="list-inline-item">
+              <a routerLink="/addcustomer" routerLinkActive="active" class="btn btn-info">Add Customer</a>
+            </li>
+            <li class="list-inline-item">
+                <span>|||</span>
+            </li>
+            <li class="list-inline-item">
+              <a routerLink="/order" routerLinkActive="active" class="btn btn-info">Orders</a>
             </li>
           </ul>
         </div>
@@ -18,3 +33,10 @@
     </div>
   </div>
 </div>
+
+<!-- <footer class="footer">
+  <div class="container">
+    <span>All Rights Reserved 2022 @SoftServe Academy</span>
+  </div>
+</footer>
+ -->

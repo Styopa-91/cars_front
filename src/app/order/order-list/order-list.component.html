@@ -1,0 +1,25 @@
+<div class="card my-5">
+    <div class="card-body">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Description</th>
+                    <th scope="col">Created At</th>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Car</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let order of orders">
+                    <td>{{ order.description }}</td>
+                    <td>{{ order.createdAt }}</td>
+                    <td>{{ order.customer.firstName +' '+ order.customer.lastName}}</td>
+                    <td>{{ order.car.model }}</td>
+                   
+                    <td><button (click)="deleteOrder(order.id)" class="btn btn-danger">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

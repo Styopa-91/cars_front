@@ -1,0 +1,22 @@
+<div class="card my-5">
+    <div class="card-body">
+        <form (ngSubmit)="onSubmit()" #orderForm="ngForm">
+            
+            <div class="form-group">
+                <h3>Create Order</h3>
+                <label for="description">Description</label>
+                <input type="text" [(ngModel)]="order.description" class="form-control" id="description" name="description"
+                    placeholder="Enter description" required #description="ngModel">
+                <div [hidden]="!description.pristine" class="alert alert-danger">Description is required</div>
+            </div>
+
+            <select>
+                <option [ngValue]="null" >Select Customer</option>
+                <option *ngFor="let customer of customers" [ngValue]="customer.id">{{customer.firstName+ ' | '+ customer.email}}</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit" [disabled]="!orderForm.form.valid" class="btn btn-info">Submit</button>
+        </form>
+    </div>
+</div>
