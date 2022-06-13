@@ -4,7 +4,7 @@ import { Car } from './car';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CarServiceService {
   private carsUrl: string;
@@ -26,6 +26,6 @@ export class CarServiceService {
   }
 
   public delete(id: string): Observable<any> {
-    return this.http.delete(this.carsUrl + "/" + id);
+    return this.http.delete(this.carsUrl + '/' + id);
   }
 }

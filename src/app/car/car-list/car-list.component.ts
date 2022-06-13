@@ -8,34 +8,22 @@ import { Order } from 'src/app/order/order';
 @Component({
   selector: 'app-car-list',
   templateUrl: './car-list.component.html',
-  styleUrls: ['./car-list.component.css']
+  styleUrls: ['./car-list.component.css'],
 })
 export class CarListComponent implements OnInit {
   cars: Car[] = [];
   orderService!: OrderServiceService;
   order!: Order;
- 
 
-  constructor(private router: Router,
-    private carService: CarServiceService) { }
+  constructor(private router: Router, private carService: CarServiceService) {}
 
-   public deleteCar(id: string) {
-     this.carService.delete(id).subscribe(result => this.ngOnInit());
+  public deleteCar(id: string) {
+    this.carService.delete(id).subscribe(() => this.ngOnInit());
   }
 
-  onSubmit(id: string) {
-    this.orderService.save(this.order).subscribe(result => this.gotoOrderList());
-  }
-
-   gotoOrderList() {
-    this.router.navigate(['/order']);
-  }
   ngOnInit() {
-     this.carService.findAll().subscribe(data => {
+    this.carService.findAll().subscribe((data) => {
       this.cars = data;
     });
   }
-
- 
-
 }

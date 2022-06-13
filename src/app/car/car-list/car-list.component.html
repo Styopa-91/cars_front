@@ -18,7 +18,7 @@
                     <td>{{ car.price }}</td>
                     <td>{{ car.vin_code }}</td>
                     <td><button (click)="deleteCar(car.id)" class="btn btn-danger">Delete</button></td>
-                    <td><a routerLink="/addorder" class="btn btn-primary">Add To Order</a></td>
+                    <td><button [routerLink]="['/addorder', car.id]" class="btn btn-primary">Create Order</button></td>
                 </tr>
             </tbody>
         </table>

@@ -7,12 +7,16 @@
                 <label for="description">Description</label>
                 <input type="text" [(ngModel)]="order.description" class="form-control" id="description" name="description"
                     placeholder="Enter description" required #description="ngModel">
-                <div [hidden]="!description.pristine" class="alert alert-danger">Description is required</div>
+                <div *ngIf="description.invalid && (description.dirty || description.touched)">
+                    <div *ngIf="description.errors?.['required']" class="alert-danger">
+                        Description is required.
+                    </div>
+                </div>
             </div>
 
-            <select>
-                <option [ngValue]="null" >Select Customer</option>
-                <option *ngFor="let customer of customers" [ngValue]="customer.id">{{customer.firstName+ ' | '+ customer.email}}</option>
+            <select [(ngModel)]="order.customer.id" name="customer" class="form-control" [value]="">
+                <option value="">Select Customer</option>
+                <option *ngFor="let customer of customers" class="form-control" [ngValue]="customer.id">{{customer.firstName+ ' | '+ customer.email}}</option>
             </select>
             <br>
             <br>
