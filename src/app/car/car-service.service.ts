@@ -17,6 +17,10 @@ export class CarServiceService {
     return this.http.get<Car[]>(this.carsUrl);
   }
 
+  public getById(id: string): Observable<Car> {
+    return this.http.get<Car>(this.carsUrl + '/' + id);
+  }
+
   public save(car: Car) {
     return this.http.post<Car>(this.carsUrl, car);
   }

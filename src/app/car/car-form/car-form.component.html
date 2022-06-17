@@ -1,5 +1,6 @@
 <div class="card my-5">
     <div class="card-body">
+        <h5 class="text-center">{{ id ? 'Edit' : 'Add'}} Car</h5>
         <form (ngSubmit)="onSubmit()" #carForm="ngForm">
             
             <div class="form-group">
@@ -15,7 +16,7 @@
             
             <div class="form-group">
                 <label for="color">Color</label>
-                <input type="text" [(ngModel)]="car.color" class="form-control" id="color" name="color"
+                <input  type="text" [(ngModel)]="car.color" class="form-control" id="color" name="color"
                     placeholder="Enter color" required #color="ngModel">
                 <div *ngIf="color.invalid && (color.dirty || color.touched)">
                     <div *ngIf="color.errors?.['required']" class="alert-danger">

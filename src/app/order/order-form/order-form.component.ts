@@ -4,8 +4,6 @@ import { Customer } from 'src/app/customer/customer';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderServiceService } from '../order-service.service';
 import { CustomerServiceService } from 'src/app/customer/customer-service.service';
-import { NgForm } from '@angular/forms';
-import { CarServiceService } from '../../car/car-service.service';
 import { Car } from 'src/app/car/car';
 
 @Component({
@@ -22,8 +20,7 @@ export class OrderFormComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private orderService: OrderServiceService,
-    private customerService: CustomerServiceService,
-    private carService: CarServiceService
+    private customerService: CustomerServiceService
   ) {
     this.order = new Order();
 
@@ -38,7 +35,6 @@ export class OrderFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.order);
     this.orderService.save(this.order).subscribe(() => this.gotoOrderList());
   }
 

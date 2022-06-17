@@ -1,9 +1,9 @@
-export class Car {
+import { ColorPickerComponent } from 'ngx-color-picker';
 
-    id!: string;
-    model?: string;
-    color?: string;
-    price?: number;
-    vin_code?: string;
-    
+export class Car {
+  id!: string;
+  model?: string;
+  color?: string;
+  price?: number;
+  vin_code?: string;
 }

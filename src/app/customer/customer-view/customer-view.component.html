@@ -1,0 +1,32 @@
+<div class="container">
+    <h5 class="text-center">Customer DETAILS</h5>
+    <div class="table-responsive">
+        <table class="table table-bordered p-0 m-0">
+            <tbody>
+                <tr scope="row">
+                    <th>First Name</th>
+                    <td>{{ customer.firstName }}</td>
+                </tr>
+                <tr scope="row">
+                    <th>Last Name</th>
+                    <td>{{ customer.lastName }}</td>
+                </tr>
+                <tr scope="row">
+                    <th>Email</th>
+                    <td>{{ customer.email }}</td>
+                </tr>
+                <tr scope="row">
+                    <th>Phone</th>
+                    <td>{{ customer.phone }}</td>
+                </tr>
+                <tr scope="row">
+                    <th>Orders</th>
+                    <td><tr *ngFor="let order of customer.orders">Description: {{ order.description | json }} ||| Created At: {{ order.createdAt | json }}</tr><tr></tr></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex">
+        <a href="#" routerLink="/customer" class="btn btn-primary mt-2 w-100">Back</a>
+    </div>
+</div>

@@ -16,7 +16,9 @@ import { CustomerListComponent } from './customer/customer-list/customer-list/cu
 import { CustomerFormComponent } from './customer/customer-form/customer-form/customer-form.component';
 import { OrderListComponent } from './order/order-list/order-list.component';
 import { OrderFormComponent } from './order/order-form/order-form.component';
-
+import { CustomerViewComponent } from './customer/customer-view/customer-view.component';
+import { ColorPickerModule } from 'ngx-color-picker';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -26,16 +28,18 @@ import { OrderFormComponent } from './order/order-form/order-form.component';
     CustomerListComponent,
     CustomerFormComponent,
     OrderListComponent,
-    OrderFormComponent
-
+    OrderFormComponent,
+    CustomerViewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ColorPickerModule,
+    ModalModule.forRoot(),
   ],
   providers: [CarServiceService, CustomerServiceService, OrderServiceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

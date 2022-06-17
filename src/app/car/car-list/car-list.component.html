@@ -7,17 +7,26 @@
                     <th scope="col">Color</th>
                     <th scope="col">Price</th>
                     <th scope="col">Vin-code</th>
-                    <th scope="col">Delete</th>
-                    <th scope="col">Add</th>
+                    <th scope="col" colspan="3" class="center">Action</th>
+                    <!-- <th scope="col">Edit</th>
+                    <th scope="col">Create Order</th> -->
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let car of cars">
                     <td>{{ car.model }}</td>
                     <td>{{ car.color }}</td>
-                    <td>{{ car.price }}</td>
+                    <td>{{ car.price }} $</td>
                     <td>{{ car.vin_code }}</td>
-                    <td><button (click)="deleteCar(car.id)" class="btn btn-danger">Delete</button></td>
+                    <td><button (click)="openModal(template)" class="btn btn-danger">Delete</button></td>
+                    <ng-template #template>
+                        <div class="modal-body text-center">
+                            <p>Do you want to delete? {{ car.model }}</p>
+                            <button type="button" class="btn btn-default" (click)="confirm(car.id)">Yes</button>
+                            <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+                        </div>
+                    </ng-template>
+                    <td><button [routerLink]="['/car', car.id, 'edit']" class="btn btn-success">Edit</button></td>
                     <td><button [routerLink]="['/addorder', car.id]" class="btn btn-primary">Create Order</button></td>
                 </tr>
             </tbody>
