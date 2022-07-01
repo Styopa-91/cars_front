@@ -15,3 +15,11 @@
 .btn-success {
     background: rgb(40, 115, 74);
 }
+
+.btn-info {
+    background: rgb(105, 153, 174);
+}
+
+.btn-default {
+    background: rgb(157, 155, 155);
+}
