@@ -10,7 +10,7 @@ export class CarServiceService {
   private carsUrl: string;
 
   constructor(private http: HttpClient) {
-    this.carsUrl = 'http://localhost:8080/cars/car';
+    this.carsUrl = 'http://localhost:8085/cars-1.0-SNAPSHOT/car';
   }
 
   public findAll(): Observable<Car[]> {

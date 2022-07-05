@@ -20,6 +20,8 @@ import { CustomerViewComponent } from './customer/customer-view/customer-view.co
 import { ColorPickerModule } from 'ngx-color-picker';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,12 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ColorPickerModule,
     ModalModule.forRoot(),
   ],
-  providers: [CarServiceService, CustomerServiceService, OrderServiceService],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    CarServiceService,
+    CustomerServiceService,
+    OrderServiceService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

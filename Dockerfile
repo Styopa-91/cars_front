@@ -8,5 +8,5 @@ COPY . .
 RUN ng build
 
 
-FROM nginx as runtime
+FROM nginx 
 COPY --from=build /app/dist/* /usr/share/nginx/html

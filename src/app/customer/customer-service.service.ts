@@ -10,7 +10,7 @@ export class CustomerServiceService {
   private customersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.customersUrl = 'http://localhost:8080/cars/customer';
+    this.customersUrl = 'http://localhost:8085/cars-1.0-SNAPSHOT/customer';
   }
 
   public findAll(): Observable<Customer[]> {

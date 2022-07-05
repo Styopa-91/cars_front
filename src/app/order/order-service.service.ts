@@ -4,13 +4,13 @@ import { Order } from './order';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OrderServiceService {
   private ordersUrl: string;
 
   constructor(private http: HttpClient) {
-    this.ordersUrl = 'http://localhost:8080/cars/order';
+    this.ordersUrl = 'http://localhost:8085/cars-1.0-SNAPSHOT/order';
   }
 
   public findAll(): Observable<Order[]> {
@@ -26,6 +26,6 @@ export class OrderServiceService {
   }
 
   public delete(id: string): Observable<any> {
-    return this.http.delete(this.ordersUrl + "/" + id);
+    return this.http.delete(this.ordersUrl + '/' + id);
   }
 }
